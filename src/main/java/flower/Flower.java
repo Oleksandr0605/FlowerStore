@@ -28,7 +28,7 @@ public class Flower {
     }
 
     public void setPrice(double new_price) {
-        if (new_price < 0 || Double.toString(new_price).matches("^[a-z][a-zA-Z]*$")) {
+        if (new_price < 0) {
             price = 0;
         }
         else {
