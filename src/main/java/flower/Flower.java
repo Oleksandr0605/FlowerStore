@@ -16,18 +16,23 @@ public class Flower {
     @Getter
     private FlowerType flowerType;
 
-    public String getColor() {
-        return color.toString();
-    }
-
-    public void setPrice(double price){
-        this.price = price < 0 ? 0 : price;
-    }
-
     public Flower(Flower flower) {
         this.sepalLength = flower.sepalLength;
         this.color = flower.color;
         this.price = flower.price;
         this.flowerType = flower.flowerType;
+    }
+
+    public String getColor() {
+        return color.toString();
+    }
+
+    public void setPrice(double new_price) {
+        if (new_price < 0) {
+            price = 0;
+        }
+        else {
+            price = new_price;
+        }
     }
 }

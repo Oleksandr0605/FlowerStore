@@ -7,8 +7,9 @@ public class FlowerPack {
     private Flower flower;
     private int quantity;
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity < 0 ? 0 : quantity;
+    public FlowerPack(Flower flower) {
+        this.flower = new Flower(flower);
+        this.quantity = 1;
     }
 
     public FlowerPack(Flower flower, int quantity) {
@@ -16,12 +17,16 @@ public class FlowerPack {
         this.quantity = quantity;
     }
 
-    public FlowerPack(Flower flower) {
-        this.flower = new Flower(flower);
-        this.quantity = 1;
+    public void setQuantity(int new_quantity) {
+        if (new_quantity < 0) {
+            quantity = 0;
+        }
+        else {
+            quantity = new_quantity;
+        }
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return flower.getPrice() * quantity;
     }
 
