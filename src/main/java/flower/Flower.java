@@ -27,12 +27,12 @@ public class Flower {
         return color.toString();
     }
 
-    public void setPrice(double new_price) {
-        if (new_price < 0) {
+    public void setPrice(double newPrice) {
+        if (newPrice < 0) {
             price = 0;
         }
         else {
-            price = new_price;
+            price = newPrice;
         }
     }
 }
